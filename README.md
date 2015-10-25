@@ -34,12 +34,19 @@ use LCDDriver functions to manipulate the iMON LCD Display
 Create a master screen (NOT vScreen) on the iMon
 
 >  name : unique name for the screen
+>
 >  data : {
+>
 >    duration : amount of time to display screen if more than on screen exists (Default: 5000)
+>
 >    heartbeat : 'on'/'off' utilize LCDd's Heartbeat (Default : 'off')
+>
 >    backlight : 'on'/'off' Use backlight for screen (Default: 'on')
+>
 >    priority : Screens priority in LCDd (Default: 2)
+>
 >    widgetType : type of widget to use for Line1/Line2 (Default : 'scroller')
+>
 >  }
   
 i.e.
@@ -58,12 +65,19 @@ lc.screen('Plex_Screen', {
  Set the screen to new display values (Line 1, Line 2, icons and progress)
 
 >  Object options : {
+>
 >    screen : The vScreen in which to set the display
+>
 >    clear : TRUE: clear icons and progress prior to display (use alone for screen blanking)
+>
 >    line1 : Text to display on the top line
+>
 >    line2 : Text to display on the bottom line
+>
 >    icons : IconList holding all icons to turn on
+>
 >    progress : {top, topLine, bottom, bottomLine} percentage for each progress bar
+
     
 i.e.
 
