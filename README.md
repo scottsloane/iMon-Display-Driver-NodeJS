@@ -4,23 +4,30 @@ Serial LCDd (LCDProc) Driver for iMon LCD Displays on NodeJS
 ## Usage
 include LCDDriver :
 
+```
 var LCDDriver = require('./lcddriver.js');
 lcdDriver = new LCDDriver();
+```
 
 call init :
 
+```
 lcdDriver.init();
+```
 
 Listen for init and ready events :
+
+```
 lcdDriver.on('init', function() {});
 lcdDriver.on('ready', function(){
   //Do setup things
 });
+```
 
 use LCDDriver functions to manipulate the iMON LCD Display
 
 ## Useful functions
-lcdDriver.screen(name, options);
+`lcdDriver.screen(name, options);`
 Create a master screen (NOT vScreen) on the iMon
 
   name : unique name for the screen
@@ -34,13 +41,16 @@ Create a master screen (NOT vScreen) on the iMon
   
 i.e.
 
+```
 lc.screen('Plex_Screen', {
   duration : 2000,
   heartbeat : 'off',
   backlight : 'on'
 });
+```
 
-lcdDriver.iMonSetScreen(options);
+
+`lcdDriver.iMonSetScreen(options);`
  Set the screen to new display values (Line 1, Line 2, icons and progress)
 
   Object options : {
@@ -53,6 +63,7 @@ lcdDriver.iMonSetScreen(options);
     
 i.e.
 
+```
 lcdDisplay.iMonSetScreen(
   {
       clear : false,
@@ -64,8 +75,9 @@ lcdDisplay.iMonSetScreen(
       progress : 'clear'
   }
 );
+```
 
-lcdDriver.clear();
+`lcdDriver.clear();`
 clear iMon icons and progress bars
 
 ##Icons
@@ -74,40 +86,40 @@ and pass it in iMonSetScreen options
 
 Available Icons are :
 
-  disc
-  music
-  movie
-  photo
-  cd
-  tv_top
-  web
-  news
-  speaker_2
-  speaker_5
-  speaker_7
-  spdif
-  src
-  fit
-  tv
-  hdtv
-  src1
-  src2
-  right_mp3
-  right_ogg
-  right_wma
-  right_wav
-  middle_mpg
-  middle_ac3
-  middle_dts
-  middle_wma
-  left_mpg
-  left_divx
-  left_xvid
-  left_wmv
-  vol
-  time
-  alarm
-  record
-  repeat
-  shuffle
-  disc_in
+  * disc
+  * music
+  * movie
+  * photo
+  * cd
+  * tv_top
+  * web
+  * news
+  * speaker_2
+  * speaker_5
+  * speaker_7
+  * spdif
+  * src
+  * fit
+  * tv
+  * hdtv
+  * src1
+  * src2
+  * right_mp3
+  * right_ogg
+  * right_wma
+  * right_wav
+  * middle_mpg
+  * middle_ac3
+  * middle_dts
+  * middle_wma
+  * left_mpg
+  * left_divx
+  * left_xvid
+  * left_wmv
+  * vol
+  * time
+  * alarm
+  * record
+  * repeat
+  * shuffle
+  * disc_in
